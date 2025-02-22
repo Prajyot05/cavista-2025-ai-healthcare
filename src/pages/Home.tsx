@@ -1,6 +1,6 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import { Brain, Heart, Activity, Users } from 'lucide-react';
+import React from "react";
+import { Link } from "react-router-dom";
+import { Brain, Heart, Activity, Users } from "lucide-react";
 
 const Home = () => {
   return (
@@ -11,7 +11,8 @@ const Home = () => {
             AI-Powered Healthcare at Your Fingertips
           </h1>
           <p className="text-xl text-gray-600 mb-8">
-            Get personalized health insights, connect with doctors, and monitor your well-being
+            Get personalized health insights, connect with doctors, and monitor
+            your well-being
           </p>
           <div className="flex justify-center space-x-4">
             <Link
@@ -56,7 +57,15 @@ const Home = () => {
   );
 };
 
-const FeatureCard = ({ icon, title, description }: { icon: React.ReactNode, title: string, description: string }) => (
+const FeatureCard = ({
+  icon,
+  title,
+  description,
+}: {
+  icon: React.ReactNode;
+  title: string;
+  description: string;
+}) => (
   <div className="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition">
     <div className="mb-4">{icon}</div>
     <h3 className="text-xl font-semibold text-gray-900 mb-2">{title}</h3>

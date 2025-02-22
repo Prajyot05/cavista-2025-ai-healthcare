@@ -1,5 +1,5 @@
-import React from 'react';
-import { Bell, Lock, User, Globe, Moon, Phone, Shield } from 'lucide-react';
+import React from "react";
+import { Bell, Lock, User, Globe, Moon, Phone, Shield } from "lucide-react";
 
 const Settings = () => {
   return (
@@ -13,8 +13,8 @@ const Settings = () => {
               <User className="h-10 w-10 text-gray-400" />
             </div>
             <div>
-              <h2 className="text-xl font-semibold">John Doe</h2>
-              <p className="text-gray-600">john.doe@example.com</p>
+              <h2 className="text-xl font-semibold">Prajyot Tayde</h2>
+              <p className="text-gray-600">prajyot.tayde@gmail.com</p>
             </div>
             <button className="ml-auto text-blue-600 hover:text-blue-700">
               Edit Profile
@@ -24,7 +24,9 @@ const Settings = () => {
 
         <div className="p-6 space-y-6">
           <section>
-            <h3 className="text-lg font-medium text-gray-900 mb-4">Account Settings</h3>
+            <h3 className="text-lg font-medium text-gray-900 mb-4">
+              Account Settings
+            </h3>
             <div className="space-y-4">
               <SettingItem
                 icon={<User className="h-5 w-5 text-gray-400" />}
@@ -45,7 +47,9 @@ const Settings = () => {
           </section>
 
           <section>
-            <h3 className="text-lg font-medium text-gray-900 mb-4">Preferences</h3>
+            <h3 className="text-lg font-medium text-gray-900 mb-4">
+              Preferences
+            </h3>
             <div className="space-y-4">
               <SettingItem
                 icon={<Bell className="h-5 w-5 text-gray-400" />}
@@ -69,7 +73,9 @@ const Settings = () => {
           </section>
 
           <section>
-            <h3 className="text-lg font-medium text-gray-900 mb-4">Contact & Support</h3>
+            <h3 className="text-lg font-medium text-gray-900 mb-4">
+              Contact & Support
+            </h3>
             <div className="space-y-4">
               <SettingItem
                 icon={<Phone className="h-5 w-5 text-gray-400" />}
@@ -79,7 +85,8 @@ const Settings = () => {
               <div className="bg-gray-50 rounded-lg p-4">
                 <h4 className="font-medium mb-2">Need Help?</h4>
                 <p className="text-sm text-gray-600 mb-3">
-                  Our support team is available 24/7 to assist you with any questions or concerns.
+                  Our support team is available 24/7 to assist you with any
+                  questions or concerns.
                 </p>
                 <button className="text-blue-600 hover:text-blue-700 text-sm font-medium">
                   Contact Support
@@ -101,7 +108,13 @@ interface SettingItemProps {
   value?: string;
 }
 
-const SettingItem = ({ icon, title, description, toggle, value }: SettingItemProps) => {
+const SettingItem = ({
+  icon,
+  title,
+  description,
+  toggle,
+  value,
+}: SettingItemProps) => {
   return (
     <div className="flex items-center justify-between p-4 rounded-lg hover:bg-gray-50 transition">
       <div className="flex items-center space-x-3">
@@ -120,7 +133,11 @@ const SettingItem = ({ icon, title, description, toggle, value }: SettingItemPro
       ) : (
         <button className="text-gray-400 hover:text-gray-500">
           <svg className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-            <path fillRule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clipRule="evenodd" />
+            <path
+              fillRule="evenodd"
+              d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
+              clipRule="evenodd"
+            />
           </svg>
         </button>
       )}

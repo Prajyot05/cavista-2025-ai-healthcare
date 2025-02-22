@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { Upload, FileText, CheckCircle } from 'lucide-react';
+import React, { useState } from "react";
+import { FileText, CheckCircle } from "lucide-react";
 
 const HealthDataUpload = () => {
   const [selectedFiles, setSelectedFiles] = useState<File[]>([]);
@@ -15,7 +15,7 @@ const HealthDataUpload = () => {
     e.preventDefault();
     setUploading(true);
     // Simulate upload delay
-    await new Promise(resolve => setTimeout(resolve, 2000));
+    await new Promise((resolve) => setTimeout(resolve, 2000));
     setUploading(false);
     setSelectedFiles([]);
   };
@@ -24,10 +24,12 @@ const HealthDataUpload = () => {
     <div className="max-w-4xl mx-auto px-4 py-8">
       <div className="bg-white rounded-xl shadow-md p-8">
         <div className="text-center mb-8">
-          <Upload className="h-12 w-12 text-blue-600 mx-auto mb-4" />
-          <h1 className="text-3xl font-bold text-gray-900">Upload Health Data</h1>
+          <h1 className="text-3xl font-bold text-gray-900">
+            Upload Health Data
+          </h1>
           <p className="text-gray-600 mt-2">
-            Upload your medical records, test results, or health monitoring data for AI analysis
+            Upload your medical records, test results, or health monitoring data
+            for AI analysis
           </p>
         </div>
 
@@ -56,10 +58,15 @@ const HealthDataUpload = () => {
 
           {selectedFiles.length > 0 && (
             <div className="bg-gray-50 rounded-lg p-4">
-              <h3 className="text-sm font-medium text-gray-900 mb-3">Selected Files:</h3>
+              <h3 className="text-sm font-medium text-gray-900 mb-3">
+                Selected Files:
+              </h3>
               <ul className="space-y-2">
                 {selectedFiles.map((file, index) => (
-                  <li key={index} className="flex items-center text-sm text-gray-600">
+                  <li
+                    key={index}
+                    className="flex items-center text-sm text-gray-600"
+                  >
                     <CheckCircle className="h-4 w-4 text-green-500 mr-2" />
                     {file.name}
                   </li>
@@ -73,23 +80,13 @@ const HealthDataUpload = () => {
             disabled={selectedFiles.length === 0 || uploading}
             className={`w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white ${
               selectedFiles.length === 0 || uploading
-                ? 'bg-gray-400 cursor-not-allowed'
-                : 'bg-blue-600 hover:bg-blue-700'
+                ? "bg-gray-400 cursor-not-allowed"
+                : "bg-blue-600 hover:bg-blue-700"
             }`}
           >
-            {uploading ? 'Uploading...' : 'Upload and Analyze'}
+            {uploading ? "Uploading..." : "Upload and Analyze"}
           </button>
         </form>
-
-        <div className="mt-8">
-          <h2 className="text-lg font-semibold mb-4">Upload Guidelines</h2>
-          <ul className="space-y-2 text-sm text-gray-600">
-            <li>• Supported file formats: PDF, JPG, PNG</li>
-            <li>• Maximum file size: 10MB per file</li>
-            <li>• Ensure all documents are clearly legible</li>
-            <li>• Remove any sensitive personal information not required for analysis</li>
-          </ul>
-        </div>
       </div>
     </div>
   );

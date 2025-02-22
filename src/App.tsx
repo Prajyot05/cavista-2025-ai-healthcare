@@ -1,14 +1,13 @@
-import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Navbar from './components/Navbar';
-import Home from './pages/Home';
-import Login from './pages/Login';
-import SignUp from './pages/SignUp';
-import Dashboard from './pages/Dashboard';
-import HealthDataUpload from './pages/HealthDataUpload';
-import DoctorProfiles from './pages/DoctorProfiles';
-import CarePlan from './pages/CarePlan';
-import Settings from './pages/Settings';
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Navbar from "./components/Navbar";
+import Home from "./pages/Home";
+import Login from "./pages/Login";
+import SignUp from "./pages/SignUp";
+import Dashboard from "./pages/Dashboard";
+import HealthDataUpload from "./pages/HealthDataUpload";
+import DoctorProfiles from "./pages/DoctorProfiles";
+import CarePlan from "./pages/CarePlan";
+import Settings from "./pages/Settings";
 
 function App() {
   return (
