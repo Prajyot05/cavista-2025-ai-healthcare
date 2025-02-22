@@ -13,7 +13,7 @@ const Navbar = () => {
             </Link>
           </div>
 
-          <div className="flex items-center space-x-4">
+          <div className="flex items-center space-x-8">
             <Link to="/dashboard" className="text-gray-600 hover:text-blue-600">
               Dashboard
             </Link>

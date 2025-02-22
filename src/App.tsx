@@ -2,12 +2,12 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
-import SignUp from "./pages/SignUp";
 import Dashboard from "./pages/Dashboard";
 import HealthDataUpload from "./pages/HealthDataUpload";
 import DoctorProfiles from "./pages/DoctorProfiles";
 import CarePlan from "./pages/CarePlan";
 import Settings from "./pages/Settings";
+import ProtectedRoute from "./middlewares/ProtectedRoutes";
 
 function App() {
   return (
@@ -17,12 +17,31 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />
-          <Route path="/signup" element={<SignUp />} />
-          <Route path="/dashboard" element={<Dashboard />} />
-          <Route path="/health-data" element={<HealthDataUpload />} />
-          <Route path="/doctors" element={<DoctorProfiles />} />
-          <Route path="/care-plan" element={<CarePlan />} />
-          <Route path="/settings" element={<Settings />} />
+          <Route path="/" element={<ProtectedRoute element={<Home />} />} />
+          <Route
+            path="/basic-details"
+            // element={<ProtectedRoute element={<SignUp />} />}
+          />
+          <Route
+            path="/dashboard"
+            element={<ProtectedRoute element={<Dashboard />} />}
+          />
+          <Route
+            path="/health-data"
+            element={<ProtectedRoute element={<HealthDataUpload />} />}
+          />
+          <Route
+            path="/doctors"
+            element={<ProtectedRoute element={<DoctorProfiles />} />}
+          />
+          <Route
+            path="/care-plan"
+            element={<ProtectedRoute element={<CarePlan />} />}
+          />
+          <Route
+            path="/settings"
+            element={<ProtectedRoute element={<Settings />} />}
+          />
         </Routes>
       </div>
     </Router>

@@ -16,7 +16,7 @@ const Home = () => {
           </p>
           <div className="flex justify-center space-x-4">
             <Link
-              to="/signup"
+              to="/basic-details"
               className="bg-blue-600 text-white px-8 py-3 rounded-lg hover:bg-blue-700 transition"
             >
               Get Started
