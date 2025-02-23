@@ -1,7 +1,11 @@
 import { signInWithPopup } from "firebase/auth";
 import { auth, googleProvider } from "../config/firebase";
+import { useAuthStore } from "../store/useAuthStore";
+import GoogleLogoutButton from "../components/GoogleLogoutButton";
 
 const Login = () => {
+  const { login } = useAuthStore();
+
   const handleGoogleSignIn = async () => {
     try {
       const result = await signInWithPopup(auth, googleProvider);
@@ -19,8 +23,8 @@ const Login = () => {
       );
 
       const userData = await response.json();
-      console.log(userData);
-      // login(userData);
+      console.log("USER DATA: ", userData);
+      login(userData);
     } catch (error) {
       console.error("Error during sign-in:", error);
     }
@@ -34,6 +38,7 @@ const Login = () => {
       >
         Sign In with Google
       </button>
+      <GoogleLogoutButton />
     </div>
   );
 };

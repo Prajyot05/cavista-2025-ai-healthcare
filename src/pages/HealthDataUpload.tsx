@@ -1,6 +1,22 @@
+import axios from "axios";
+import { useState } from "react";
+
 const HealthDataUpload = () => {
-  const handleSubmit = () => {
+  const [symptoms, setSymptoms] = useState<string>();
+  const [prediction, setPrediction] = useState<string>("");
+  const handleSubmit = async (e: any) => {
+    e.preventDefault();
     // Implement submit function
+    const res = await axios.post(
+      "https://healthai-cjgo.onrender.com/process",
+      symptoms?.toString(),
+      {
+        headers: {
+          "Content-Type": "text/plain",
+        },
+      }
+    );
+    setPrediction(res.data.symptom_vector);
   };
 
   return (
@@ -15,10 +31,17 @@ const HealthDataUpload = () => {
             <div className="text-center">
               <input
                 type="text"
+                value={symptoms}
+                onChange={(e) => setSymptoms(e.target.value)}
                 placeholder="Enter your symptoms"
                 className="w-full h-full py-2 px-2"
               />
             </div>
+          </div>
+          <div className="py-4">
+            {prediction && (
+              <h5 className="text-6lx">Predicted Disease: {prediction}</h5>
+            )}
           </div>
           <button
             type="submit"

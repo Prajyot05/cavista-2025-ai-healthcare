@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { Activity, User, Settings } from "lucide-react";
+import GoogleLogoutButton from "./GoogleLogoutButton";
 
 const Navbar = () => {
   return (
@@ -39,6 +40,7 @@ const Navbar = () => {
             >
               <Settings className="h-5 w-5" />
             </Link>
+            <GoogleLogoutButton />
           </div>
         </div>
       </div>
